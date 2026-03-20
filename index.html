@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Allan Castro Portfolio</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;}
+body{background:#0a0f1f;color:#e2e8f0;}
+
+nav{position:fixed;width:100%;display:flex;justify-content:space-between;padding:20px 60px;background:rgba(10,15,31,0.8);backdrop-filter:blur(10px);z-index:1000;}
+nav h2{color:#60a5fa;} nav ul{display:flex;gap:25px;list-style:none;} nav a{text-decoration:none;color:#cbd5f5;} nav a:hover{color:#60a5fa;}
+
+.hero{height:100vh;display:flex;align-items:center;justify-content:space-between;padding:0 80px;}
+.hero img{width:300px;border-radius:50%;border:4px solid #60a5fa;}
+.hero-text h1{font-size:3rem;} .hero-text span{color:#60a5fa;}
+
+section{padding:100px 80px;}
+h2{color:#60a5fa;margin-bottom:20px;}
+
+/* ABOUT LAYOUT */
+.about-container{display:grid;grid-template-columns:1fr 1.5fr;gap:50px;align-items:start;}
+
+.profile-box{display:flex;gap:20px;}
+.profile-box img{width:120px;border-radius:10px;}
+
+.info p{margin:5px 0;color:#94a3b8;}
+
+/* SKILLS */
+.skill{margin:15px 0;}
+.skill-name{display:flex;justify-content:space-between;font-size:14px;}
+.bar{height:8px;background:#1e293b;border-radius:5px;margin-top:5px;overflow:hidden;}
+.bar span{display:block;height:100%;background:#60a5fa;}
+
+/* RIGHT TEXT */
+.about-text p{color:#94a3b8;margin-bottom:15px;line-height:1.6;}
+
+footer{text-align:center;padding:20px;background:#020617;color:#64748b;}
+</style>
+</head>
+
+<body>
+
+<nav>
+  <h2>A.T.L.C</h2>
+  <ul>
+    <li><a href="#">Home</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<section class="hero">
+  <div class="hero-text">
+    <h1>Hi, I'm <span>Allan Troy L. Castro</span></h1>
+    <p>IT Student | Network Administration </p>
+  </div>
+  <img src="pictures\profile-pic.jpg" alt="profile">
+</section>
+
+<section id="about">
+  <h2>About Me</h2>
+
+  <div class="about-container">
+
+    <!-- LEFT SIDE -->
+    <div>
+      <div class="profile-box">
+        <img src="pictures\profile-pic.jpg" alt="profile">
+        <div class="info">
+          <p><strong>Name:</strong> Allan Castro</p>
+          <p><strong>Profile:</strong> IT Student</p>
+          <p><strong>Email:</strong> atl.castro27@gmail.com</p>
+          <p><strong>Phone:</strong> +63 908 214 0867</p>
+        </div>
+      </div>
+
+      <h3 style="margin-top:20px;">Skills</h3>
+
+      <div class="skill">
+        <div class="skill-name"><span>Cisco Packet Tracer</span><span>90%</span></div>
+        <div class="bar"><span style="width:90%"></span></div>
+      </div>
+
+      <div class="skill">
+        <div class="skill-name"><span>Network Troubleshooting</span><span>75%</span></div>
+        <div class="bar"><span style="width:75%"></span></div>
+      </div>
+
+      <div class="skill">
+        <div class="skill-name"><span>Network Configuration</span><span>90%</span></div>
+        <div class="bar"><span style="width:90%"></span></div>
+      </div>
+
+      <div class="skill">
+        <div class="skill-name"><span>Technical Support</span><span>75%</span></div>
+        <div class="bar"><span style="width:75%"></span></div>
+      </div>
+    </div>
+
+    <!-- RIGHT SIDE -->
+    <div class="about-text">
+      <p>Hey! I'm Allan Castro. I am an Information Technology student with a strong interest in networking and systems administration. Throughout my academic journey, I have gained hands-on experience in learning networking concepts and configurations, firewall setup, hardware setup and maintenance, and troubleshooting network connectivity. </p>
+
+      <p>I am eager to begin my professional career where I can apply my technical knowledge, develop practical industry skills, and contribute to building reliable and secure IT infrastructures. I am seeking entry-level opportunities in network administration, technical support, or cybersecurity where I can continuously learn, grow, and support organizational technology operations.</p>
+    </div>
+
+  </div>
+</section>
+
+
+
+<!-- PROJECTS -->
+<section id="projects">
+  <h2 style="text-align:center;">PORTFOLIO</h2>
+  <p style="text-align:center; color:#94a3b8; margin-bottom:40px;">My Recent Works</p>
+
+  <div class="projects-grid">
+
+    <div class="project-card" onclick="openModal(this)">
+      <img src="pictures/thesis.PNG" alt="project">
+      <h4>Thesis Network Design (3-Tier Hierarchical Design (With Zero Trust Integration))</h4>
+    </div>
+
+    <div class="project-card" onclick="openModal(this)">
+      <img src="pictures/ensa-iot.PNG" alt="project">
+      <h4>Enterprise Network Design (With IoT Integration and Automation using Python)</h4>
+    </div>
+
+    <div class="project-card" onclick="openModal(this)">
+      <img src="pictures/cat6.jpg" alt="project">
+      <h4>Cable Crimping (CAT6)</h4>
+    </div>
+
+    <div class="project-card" onclick="openModal(this)">
+      <img src="pictures/hardware.jpg" alt="project">
+      <h4>Hardware Setup and Maintenance</h4>
+    </div>
+
+  </div>
+</section>
+
+<!-- MODAL -->
+<div id="modal" onclick="closeModal()">
+  <img id="modalImg">
+</div>
+
+<style>
+.projects-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:25px;
+}
+
+.project-card{
+  background:#111827;
+  border-radius:10px;
+  overflow:hidden;
+  cursor:pointer;
+  transition:.3s;
+}
+
+.project-card:hover{
+  transform:translateY(-5px);
+}
+
+.project-card img{
+  width:100%;
+  height:160px;
+  object-fit:cover;
+}
+
+.project-card h4{
+  padding:15px;
+}
+
+#modal{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background:rgba(0,0,0,0.8);
+  display:none;
+  justify-content:center;
+  align-items:center;
+}
+
+#modal img{
+  max-width:80%;
+  max-height:80%;
+  border-radius:10px;
+}
+</style>
+
+<script>
+function openModal(el){
+  const img = el.querySelector("img").src;
+  document.getElementById("modalImg").src = img;
+  document.getElementById("modal").style.display = "flex";
+}
+
+function closeModal(){
+  document.getElementById("modal").style.display = "none";
+}
+</script>
+<!-- CONTACT -->
+<section id="contact">
+  <div class="contact-container">
+
+    <!-- LEFT FORM -->
+    <div class="contact-form">
+      <h2>Send A Message!</h2>
+      <form action="https://formspree.io/f/xreydgdv" method="POST">
+          <input type="text" name="name" placeholder="Your Name" required>
+          <input type="email" name="email" placeholder="Your Email" required>
+          <input type="text" name="subject" placeholder="Subject">
+          <textarea name="message" placeholder="Message"></textarea>
+          <button type="submit">Send Message</button>
+      </form>
+    </div>
+
+    <!-- RIGHT INFO -->
+    <div class="contact-info">
+      <h2>Socials</h2>
+      <p>📍 303 Purok 4 San Isidro, Santa Ana Pampanga, 2022</p>
+      <p>📞 +63 908 214 0867</p>
+      <p>✉ atl.castro27@gmail.com</p>
+
+      <div class="social-icons">
+        <a href="https://www.facebook.com/allantroy.castro1">f</a>
+        <a href="https://www.linkedin.com/in/allan-troy-castro-84235436a">in</a>
+        <a href="https://atlcastro.jobs180.com">180</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+.contact-container{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:40px;
+  background:#111827;
+  padding:40px;
+  border-radius:10px;
+}
+
+.contact-form input,
+.contact-form textarea{
+  width:100%;
+  margin:10px 0;
+  padding:10px;
+  border:none;
+  border-radius:5px;
+  background:#1e293b;
+  color:white;
+}
+
+.contact-form textarea{
+  height:120px;
+}
+
+.contact-form button{
+  margin-top:10px;
+  padding:10px 20px;
+  background:#60a5fa;
+  border:none;
+  border-radius:20px;
+  cursor:pointer;
+}
+
+.contact-info p{
+  margin:10px 0;
+  color:#94a3b8;
+}
+
+.social-icons{
+  margin-top:20px;
+  margin-right: 500px;
+  display:flex;
+  gap:15px;
+  justify-content:flex-end;
+}
+
+.social-icons a{
+  width:40px;
+  height:40px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  border:2px solid #60a5fa;
+  border-radius:50%;
+  text-decoration:none;
+  color:#60a5fa;
+  font-weight:bold;
+}
+
+.social-icons a:hover{
+  background:#60a5fa;
+  color:black;
+}
+</style>
+
+<footer>
+  <p>© Copyright 2026. All rights reserved. Created by Allan Troy L. Castro</p>
+</footer>
+
+</body>
+</html>
